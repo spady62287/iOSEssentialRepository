@@ -212,17 +212,23 @@ struct ItemViewModel {
             fatalError("unknown item: \(item)")
         }
     }
-    
+}
+
+extension ItemViewModel {
     init(friend: Friend) {
         title = friend.name
         subtitle = friend.phone
     }
-    
+}
+
+extension ItemViewModel {
     init(card: Card) {
         title = card.number
         subtitle = card.holder
     }
-    
+}
+
+extension ItemViewModel {    
     init(transfer: Transfer, longDateStyle: Bool) {
         let numberFormatter = Formatters.number
         numberFormatter.numberStyle = .currency
